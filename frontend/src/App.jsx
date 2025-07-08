@@ -1,9 +1,11 @@
-import FloatingShape from "./components/FloatingShape";
 import { Navigate, Route, Routes } from "react-router-dom";
+import FloatingShape from "./components/FloatingShape";
+
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import EmailVerificationPage from "./pages/EmailVerificationPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 
 import LoadingSpinner from "./components/LoadingSpinner";
 
@@ -37,7 +39,7 @@ const RedirectAuthenticadedUser = ({ children }) => {
 };
 
 function App() {
-  const { isCheckingAuth, checkAuth, isAuthenticaded, user } = useAuthStore();
+  const { isCheckingAuth, checkAuth } = useAuthStore();
 
   useEffect(() => {
     checkAuth();
@@ -94,6 +96,14 @@ function App() {
           }
         />
         <Route path="/verify-email" element={<EmailVerificationPage />} />
+        <Route
+          path="/forgot-password"
+          element={
+            <RedirectAuthenticadedUser>
+              <ForgotPasswordPage />
+            </RedirectAuthenticadedUser>
+          }
+        />
       </Routes>
       <Toaster />
     </div>
