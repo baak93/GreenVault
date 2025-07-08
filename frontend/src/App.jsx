@@ -5,6 +5,8 @@ import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import EmailVerificationPage from "./pages/EmailVerificationPage";
 
+import LoadingSpinner from "./components/LoadingSpinner";
+
 import { Toaster } from "react-hot-toast";
 import { useAuthStore } from "./store/authStore";
 import { useEffect } from "react";
@@ -40,8 +42,9 @@ function App() {
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
-  console.log("isAuthenticaded", isAuthenticaded);
-  console.log("user", user);
+
+  if (isCheckingAuth) return <LoadingSpinner />;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-green-900 to-emerald-900 flex items-center justify-center relative overflow-hidden">
       <FloatingShape
