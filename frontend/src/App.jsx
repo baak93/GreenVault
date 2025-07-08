@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import EmailVerificationPage from "./pages/EmailVerificationPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
 
 import LoadingSpinner from "./components/LoadingSpinner";
 
@@ -101,6 +102,14 @@ function App() {
           element={
             <RedirectAuthenticadedUser>
               <ForgotPasswordPage />
+            </RedirectAuthenticadedUser>
+          }
+        />
+        <Route
+          path="/reset-password/:token"
+          element={
+            <RedirectAuthenticadedUser>
+              <ResetPasswordPage />
             </RedirectAuthenticadedUser>
           }
         />
