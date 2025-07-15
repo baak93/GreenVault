@@ -34,7 +34,7 @@ export const sendWelcomeEmail = async (email, name) => {
       to: recipient,
       template_uuid: "58317e89-d484-4cb6-a8bc-50ce48d471d2",
       template_variables: {
-        company_info_name: "Baak's Auth Company",
+        company_info_name: "GreenVault Company",
         name: name,
       },
     });
@@ -69,9 +69,9 @@ export const sendResetSuccessEmail = async (email) => {
     const response = await mailtrapClient.send({
       from: sender,
       to: recipient,
-      subject: "Passoword reset successful",
+      subject: "Password reset successful",
       html: PASSWORD_RESET_SUCCESS_TEMPLATE,
-      category: "Passowor Reset",
+      category: "Password Reset",
     });
 
     console.log("Password reset email sent successfully");
