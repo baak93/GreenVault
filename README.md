@@ -2,7 +2,7 @@
 
 All original code is licensed under the [MIT License](LICENSE).
 
-This project is based on the **[Advanced Auth Tutorial](https://youtu.be/pmvEgZC55Cg)** by [Burak](https://www.youtube.com/@asaprogrammer_).  
+This project is based on the **[Advanced Auth Tutorial](https://youtu.be/pmvEgZC55Cg)** by [Burak](https://github.com/burakorkmez).  
 I made adjustments and updates to ensure compatibility with newer versions of Node, Vite, and deployment platforms.
 
 ### 🟢 Project Name: GreenVault
